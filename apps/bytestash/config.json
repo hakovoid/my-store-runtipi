@@ -34,7 +34,7 @@
       "type": "boolean",
       "label": "Disable Accounts",
       "hint": "Désactiver complètement le système de comptes (recommandé pour usage personnel)",
-      "default": true,
+      "default": "false",
       "required": true,
       "env_variable": "DISABLE_ACCOUNTS"
     },
@@ -42,14 +42,14 @@
       "type": "boolean",
       "label": "Allow New Accounts",
       "hint": "Autoriser la création de nouveaux comptes (ignoré si Disable Accounts est activé)",
-      "default": false,
+      "default": "true",
       "env_variable": "ALLOW_NEW_ACCOUNTS"
     },
     {
       "type": "boolean",
       "label": "Debug Mode",
       "hint": "Activer le mode debug",
-      "default": false,
+      "default": "true",
       "env_variable": "DEBUG"
     }
   ],
