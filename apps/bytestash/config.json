@@ -47,7 +47,7 @@
     },
     {
       "type": "boolean",
-      "label": "Disable",
+      "label": "Disable Internal Accounts",
       "hint": "Désactiver les comptes internes",
       "default": true,
       "required": true,
