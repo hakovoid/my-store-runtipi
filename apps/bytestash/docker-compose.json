@@ -14,11 +14,26 @@
         }
       ],
       "environment": [
-        "JWT_SECRET={{JWT_SECRET}}",
-        "TOKEN_EXPIRY={{TOKEN_EXPIRY}}",
-        "DISABLE_ACCOUNTS={{DISABLE_ACCOUNTS}}",
-        "ALLOW_NEW_ACCOUNTS={{ALLOW_NEW_ACCOUNTS}}",
-        "DEBUG={{DEBUG}}"
+        {
+          "key": "JWT_SECRET",
+          "value": "{{JWT_SECRET}}"
+        },
+        {
+          "key": "TOKEN_EXPIRY",
+          "value": "{{TOKEN_EXPIRY}}"
+        },
+        {
+          "key": "DISABLE_ACCOUNTS",
+          "value": "{{DISABLE_ACCOUNTS}}"
+        },
+        {
+          "key": "ALLOW_NEW_ACCOUNTS",
+          "value": "{{ALLOW_NEW_ACCOUNTS}}"
+        },
+        {
+          "key": "DEBUG",
+          "value": "{{DEBUG}}"
+        }
       ]
     }
   ]
