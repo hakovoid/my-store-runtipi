@@ -26,7 +26,7 @@
       "type": "text",
       "label": "Token Expiry",
       "hint": "Durée de validité du token (ex: 24h, 7d)",
-      "default": "24h",
+      "default": "7d",
       "required": true,
       "env_variable": "TOKEN_EXPIRY"
     },
@@ -35,6 +35,7 @@
       "label": "Disable Accounts",
       "hint": "Désactiver complètement le système de comptes (recommandé pour usage personnel)",
       "default": true,
+      "required": true,
       "env_variable": "DISABLE_ACCOUNTS"
     },
     {
