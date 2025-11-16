@@ -1,11 +1,13 @@
 {
+  "$schema": "../app-info-schema.json",
   "name": "ByteStash",
   "port": 5000,
   "available": true,
   "exposable": true,
+  "dynamic_config": true,
   "id": "bytestash",
-  "tipi_version": 1,
-  "version": "1.5.0",
+  "tipi_version": 6,
+  "version": "latest",
   "categories": ["development", "utilities"],
   "description": "Une solution de stockage de snippets de code écrite en React & Node.js",
   "short_desc": "Gestionnaire de snippets de code",
@@ -49,5 +51,7 @@
       "default": false,
       "env_variable": "DEBUG"
     }
-  ]
+  ],
+  "supported_architectures": ["arm64", "amd64"],
+  "min_tipi_version": "4.5.0"
 }

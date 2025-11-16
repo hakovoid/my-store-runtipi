@@ -36,6 +36,16 @@ ByteStash est une application web élégante pour organiser et gérer vos snippe
 3. Commencez à ajouter vos snippets de code
 4. Organisez-les avec des tags et catégories
 
+### ⚡ Configuration recommandée SANS comptes 
+
+```sh
+JWT_SECRET: dummy-secret
+TOKEN_EXPIRY: 24h
+ALLOW_NEW_ACCOUNTS: false
+DEBUG: false
+DISABLE_ACCOUNTS: true  ← LE PLUS IMPORTANT
+```
+
 ## 🔒 Sécurité
 
 - Générez un `JWT_SECRET` fort et unique

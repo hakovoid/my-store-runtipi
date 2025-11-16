@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 2,
+  "$schema": "https://schemas.runtipi.io/v2/dynamic-compose.json",
+  "services": [
+    {
+      "name": "bytestash",
+      "image": "ghcr.io/jordan-dalby/bytestash:latest",
+      "isMain": true,
+      "internalPort": 5000,
+      "volumes": [
+        {
+          "hostPath": "{{APP_DATA_DIR}}/data",
+          "containerPath": "/data"
+        }
+      ],
+      "environment": {
+        "JWT_SECRET": "{{JWT_SECRET}}",
+        "TOKEN_EXPIRY": "{{TOKEN_EXPIRY}}",
+        "DISABLE_ACCOUNTS": "{{DISABLE_ACCOUNTS}}",
+        "ALLOW_NEW_ACCOUNTS": "{{ALLOW_NEW_ACCOUNTS}}",
+        "DEBUG": "{{DEBUG}}"
+      }
+    }
+  ]
+}
