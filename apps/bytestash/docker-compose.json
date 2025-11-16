@@ -9,7 +9,7 @@
       "internalPort": 5000,
       "volumes": [
         {
-          "hostPath": "{APP_DATA_DIR}/data/snippets",
+          "hostPath": "${APP_DATA_DIR}/data/snippets",
           "containerPath": "/data/snippets"
         }
       ],
