@@ -1,5 +1,3 @@
-version: "3.9"
-
 services:
   bytestash:
     image: ghcr.io/jordan-dalby/bytestash:latest
@@ -10,48 +8,27 @@ services:
     volumes:
       - ${APP_DATA_DIR}/data/snippets:/data/snippets
     environment:
-      # Base path for reverse proxy (leave empty for root)
-      - BASE_PATH=${BASE_PATH:-}
-      
-      # JWT Configuration
-      - JWT_SECRET=${JWT_SECRET}
-      - TOKEN_EXPIRY=${TOKEN_EXPIRY:-24h}
-      
-      # Account Settings
-      - ALLOW_NEW_ACCOUNTS=${ALLOW_NEW_ACCOUNTS:-true}
-      - DISABLE_ACCOUNTS=${DISABLE_ACCOUNTS:-false}
-      - DISABLE_INTERNAL_ACCOUNTS=${DISABLE_INTERNAL_ACCOUNTS:-false}
-      - ALLOW_PASSWORD_CHANGES=${ALLOW_PASSWORD_CHANGES:-true}
-      
-      # Debug Mode
-      - DEBUG=${DEBUG:-false}
-      
-      # Timezone
-      - TZ=${TZ}
-      
-      # Optional: OIDC/SSO Configuration (décommentez si nécessaire)
-      # - OIDC_ENABLED=${OIDC_ENABLED:-false}
-      # - OIDC_DISPLAY_NAME=${OIDC_DISPLAY_NAME:-}
-      # - OIDC_ISSUER_URL=${OIDC_ISSUER_URL:-}
-      # - OIDC_CLIENT_ID=${OIDC_CLIENT_ID:-}
-      # - OIDC_CLIENT_SECRET=${OIDC_CLIENT_SECRET:-}
-      # - OIDC_SCOPES=${OIDC_SCOPES:-}
-    
+      BASE_PATH: ${BASE_PATH:-}
+      JWT_SECRET: ${JWT_SECRET}
+      TOKEN_EXPIRY: ${TOKEN_EXPIRY:-24h}
+      ALLOW_NEW_ACCOUNTS: ${ALLOW_NEW_ACCOUNTS:-true}
+      DISABLE_ACCOUNTS: ${DISABLE_ACCOUNTS:-false}
+      DISABLE_INTERNAL_ACCOUNTS: ${DISABLE_INTERNAL_ACCOUNTS:-false}
+      ALLOW_PASSWORD_CHANGES: ${ALLOW_PASSWORD_CHANGES:-true}
+      DEBUG: ${DEBUG:-false}
+      TZ: ${TZ}
     healthcheck:
       test: ["CMD-SHELL", "nc -z 127.0.0.1 5000 || exit 1"]
       interval: 30s
       timeout: 10s
       retries: 3
       start_period: 40s
-    
     labels:
-      # Traefik labels for Runtipi
-      - traefik.enable=true
-      - traefik.http.routers.bytestash.rule=Host(`${APP_DOMAIN}`)
-      - traefik.http.routers.bytestash.entrypoints=websecure
-      - traefik.http.routers.bytestash.tls.certresolver=myresolver
-      - traefik.http.services.bytestash.loadbalancer.server.port=5000
-    
+      traefik.enable: true
+      traefik.http.routers.bytestash.rule: Host(`${APP_DOMAIN}`)
+      traefik.http.routers.bytestash.entrypoints: websecure
+      traefik.http.routers.bytestash.tls.certresolver: myresolver
+      traefik.http.services.bytestash.loadbalancer.server.port: 5000
     networks:
       - tipi_main_network
 

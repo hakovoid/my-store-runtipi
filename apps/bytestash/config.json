@@ -7,7 +7,7 @@
   "tipi_version": 1,
   "version": "1.5.0",
   "categories": ["development", "utilities"],
-  "description": "Une solution de stockage de snippets de code écrite en React & Node.js. ByteStash vous permet d'organiser, gérer et partager vos snippets de code avec support des comptes utilisateurs, SSO et vue publique.",
+  "description": "Une solution de stockage de snippets de code écrite en React & Node.js",
   "short_desc": "Gestionnaire de snippets de code",
   "author": "jordan-dalby",
   "source": "https://github.com/jordan-dalby/ByteStash",
@@ -15,38 +15,39 @@
     {
       "type": "text",
       "label": "JWT Secret",
-      "hint": "Secret pour sécuriser les tokens JWT (générez une chaîne aléatoire)",
+      "hint": "Secret pour sécuriser les tokens JWT (laissez dummy-secret si vous désactivez les comptes)",
       "required": true,
+      "default": "dummy-secret",
       "env_variable": "JWT_SECRET"
     },
     {
       "type": "text",
       "label": "Token Expiry",
-      "hint": "Durée de validité du token (ex: 24h, 7d, 2 days)",
+      "hint": "Durée de validité du token (ex: 24h, 7d)",
       "default": "24h",
       "required": true,
       "env_variable": "TOKEN_EXPIRY"
     },
     {
       "type": "boolean",
-      "label": "Allow New Accounts",
-      "hint": "Autoriser la création de nouveaux comptes",
+      "label": "Disable Accounts",
+      "hint": "Désactiver complètement le système de comptes (recommandé pour usage personnel)",
       "default": true,
+      "env_variable": "DISABLE_ACCOUNTS"
+    },
+    {
+      "type": "boolean",
+      "label": "Allow New Accounts",
+      "hint": "Autoriser la création de nouveaux comptes (ignoré si Disable Accounts est activé)",
+      "default": false,
       "env_variable": "ALLOW_NEW_ACCOUNTS"
     },
     {
       "type": "boolean",
       "label": "Debug Mode",
-      "hint": "Activer le mode debug (logging)",
+      "hint": "Activer le mode debug",
       "default": false,
       "env_variable": "DEBUG"
-    },
-    {
-      "type": "boolean",
-      "label": "Disable Accounts",
-      "hint": "Désactiver complètement le système de comptes",
-      "default": false,
-      "env_variable": "DISABLE_ACCOUNTS"
     }
   ]
 }
