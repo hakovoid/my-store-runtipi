@@ -12,6 +12,7 @@ services:
       - TOKEN_EXPIRY=${TOKEN_EXPIRY}
       - DISABLE_ACCOUNTS=${DISABLE_ACCOUNTS}
       - ALLOW_NEW_ACCOUNTS=${ALLOW_NEW_ACCOUNTS}
+      - DISABLE_INTERNAL_ACCOUNTS=${DISABLE_INTERNAL_ACCOUNTS}
       - DEBUG=${DEBUG}
     restart: unless-stopped
     networks:

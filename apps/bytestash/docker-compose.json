@@ -18,6 +18,7 @@
         { "key": "TOKEN_EXPIRY", "value": "{TOKEN_EXPIRY}" },
         { "key": "DISABLE_ACCOUNTS", "value": "{DISABLE_ACCOUNTS}" },
         { "key": "ALLOW_NEW_ACCOUNTS", "value": "{ALLOW_NEW_ACCOUNTS}" },
+        { "key": "DISABLE_INTERNAL_ACCOUNTS", "value": "{DISABLE_INTERNAL_ACCOUNTS}" },
         { "key": "DEBUG", "value": "{DEBUG}" }
       ]
     }

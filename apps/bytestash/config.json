@@ -47,6 +47,14 @@
     },
     {
       "type": "boolean",
+      "label": "Disable",
+      "hint": "Désactiver les comptes internes",
+      "default": true,
+      "required": true,
+      "env_variable": "DISABLE_INTERNAL_ACCOUNTS"
+    },
+    {
+      "type": "boolean",
       "label": "Debug Mode",
       "hint": "Activer le mode debug",
       "default": true,
