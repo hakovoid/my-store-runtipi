@@ -26,7 +26,7 @@
       "type": "text",
       "label": "Token Expiry",
       "hint": "Durée de validité du token (ex: 24h, 7d)",
-      "default": "7d",
+      "default": 6048000000,
       "required": false,
       "env_variable": "TOKEN_EXPIRY"
     },
