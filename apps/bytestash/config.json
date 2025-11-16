@@ -26,8 +26,8 @@
       "type": "text",
       "label": "Token Expiry",
       "hint": "Durée de validité du token (ex: 24h, 7d)",
-      "default": 7,
-      "required": true,
+      "default": "7d",
+      "required": false,
       "env_variable": "TOKEN_EXPIRY"
     },
     {
@@ -35,7 +35,7 @@
       "label": "Disable Accounts",
       "hint": "Désactiver complètement le système de comptes (recommandé pour usage personnel)",
       "default": false,
-      "required": true,
+      "required": false,
       "env_variable": "DISABLE_ACCOUNTS"
     },
     {
@@ -50,7 +50,7 @@
       "label": "Disable Internal Accounts",
       "hint": "Désactiver les comptes internes",
       "default": true,
-      "required": true,
+      "required": false,
       "env_variable": "DISABLE_INTERNAL_ACCOUNTS"
     },
     {
