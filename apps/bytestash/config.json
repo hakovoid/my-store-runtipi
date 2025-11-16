@@ -49,7 +49,7 @@
       "type": "boolean",
       "label": "Disable Internal Accounts",
       "hint": "Désactiver les comptes internes",
-      "default": true,
+      "default": false,
       "required": false,
       "env_variable": "DISABLE_INTERNAL_ACCOUNTS"
     },
