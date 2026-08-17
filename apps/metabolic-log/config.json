@@ -1,0 +1,49 @@
+{
+  "$schema": "../app-info-schema.json",
+  "name": "Metabolic Log",
+  "port": 8347,
+  "available": true,
+  "exposable": true,
+  "dynamic_config": true,
+  "id": "metabolic-log",
+  "tipi_version": 6,
+  "version": "0.19.0",
+  "categories": ["utilities"],
+  "description": "Journal alimentaire et sportif à saisie libre, analysé par un LLM, calibré sur un bilan sanguin personnel. Les cibles et les commentaires dérivent des marqueurs biologiques réels plutôt que d'un objectif de poids générique.",
+  "short_desc": "Journal alimentaire analysé par IA, calibré sur un bilan sanguin",
+  "author": "hakovoid",
+  "source": "https://github.com/hakovoid/metabolic-log",
+  "form_fields": [
+    {
+      "type": "random",
+      "label": "Clé de chiffrement de la base",
+      "hint": "Générée automatiquement. Chiffre la base au repos (SQLCipher). Sans elle, la base est définitivement illisible : sauvegardez-la hors de ce formulaire si vous la modifiez.",
+      "required": true,
+      "env_variable": "DB_KEY",
+      "min": 48
+    },
+    {
+      "type": "text",
+      "label": "Clé API Anthropic",
+      "hint": "console.anthropic.com — facultatif, mais au moins un fournisseur (Anthropic, OpenAI ou Ollama) doit être renseigné pour que l'analyse fonctionne",
+      "required": false,
+      "env_variable": "ANTHROPIC_API_KEY"
+    },
+    {
+      "type": "text",
+      "label": "Clé API OpenAI",
+      "hint": "platform.openai.com — facultatif",
+      "required": false,
+      "env_variable": "OPENAI_API_KEY"
+    },
+    {
+      "type": "text",
+      "label": "URL Ollama",
+      "hint": "Ex: http://ollama:11434 — facultatif, pour une analyse sans quitter le réseau local. Les photos d'assiettes y sont nettement moins précises",
+      "required": false,
+      "env_variable": "OLLAMA_URL"
+    }
+  ],
+  "supported_architectures": ["arm64", "amd64"],
+  "min_tipi_version": "4.5.0"
+}

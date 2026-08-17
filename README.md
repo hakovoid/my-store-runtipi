@@ -2,6 +2,47 @@
 
 --- 
 
+# Metabolic Log
+
+**Journal alimentaire et sportif à saisie libre, analysé par un LLM, calibré sur un bilan sanguin personnel**
+
+Les cibles et les commentaires dérivent des marqueurs biologiques réels — pas d'un objectif de poids générique.
+
+## 🚀 Fonctionnalités principales
+
+- **📝 Saisie libre** : texte ou photo d'assiette, analysée par IA (macros, drapeaux, commentaire situé)
+- **🤔 Évaluer avant de manger** : un avis sans rien enregistrer, tenant compte des marges du jour
+- **🧪 Bilan du jour** au format compte-rendu de laboratoire
+- **🏃 Suivi d'activité** hebdomadaire sur un programme en 4 phases
+- **🩸 Bilans sanguins** : saisie par photo, comparaison au précédent, repères alimentaires dérivés
+- **📄 Rapport pour le médecin**, exports CSV/JSON, tous produits localement
+- **🔒 Chiffrement au repos** (SQLCipher)
+
+## 📋 Configuration requise
+
+- **Port** : 3000 (interne)
+- **Variables d'environnement** :
+  - `DB_KEY` : clé de chiffrement de la base (générée automatiquement, obligatoire)
+  - Au moins un fournisseur d'analyse : `ANTHROPIC_API_KEY`, `OPENAI_API_KEY`, ou `OLLAMA_URL`
+
+## 🔧 Après l'installation
+
+1. Accédez à Metabolic Log via l'interface Runtipi
+2. Renseignez votre profil dans « Profil et cibles »
+3. Saisissez votre premier bilan sanguin
+4. Cliquez « Adapter au dernier bilan » pour calibrer les repères alimentaires
+
+## 🔒 Confidentialité
+
+Le contexte transmis au modèle lors de l'analyse d'un repas est volontairement générique, sans valeur chiffrée. Les valeurs réelles du bilan ne quittent le poste que lors d'une dérivation explicite des repères, pas lors de l'analyse quotidienne.
+
+## 📚 Ressources
+
+- **GitHub** : [hakovoid/metabolic-log](https://github.com/hakovoid/metabolic-log)
+- **Version** : 0.19.0
+
+---
+
 # ByteStash
 
 **Une solution moderne de stockage de snippets de code**
