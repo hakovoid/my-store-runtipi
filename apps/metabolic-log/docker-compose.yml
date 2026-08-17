@@ -1,6 +1,6 @@
 services:
   metabolic-log:
-    image: ghcr.io/hakovoid/metabolic-log:0.20.0
+    image: ghcr.io/hakovoid/metabolic-log:0.21.1
     volumes:
       - ${APP_DATA_DIR}/data:/data
     environment:

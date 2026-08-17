@@ -40,7 +40,7 @@ Le contexte transmis au modèle lors de l'analyse d'un repas est volontairement 
 ## 📚 Ressources
 
 - **GitHub** : [hakovoid/metabolic-log](https://github.com/hakovoid/metabolic-log)
-- **Version** : 0.20.0
+- **Version** : 0.21.1
 
 ---
 
