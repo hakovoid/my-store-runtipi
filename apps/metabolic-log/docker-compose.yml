@@ -5,6 +5,7 @@ services:
       - ${APP_DATA_DIR}/data:/data
     environment:
       - DB_KEY=${DB_KEY}
+      - APP_PASSWORD=${APP_PASSWORD}
       - ANTHROPIC_API_KEY=${ANTHROPIC_API_KEY}
       - OPENAI_API_KEY=${OPENAI_API_KEY}
       - OLLAMA_URL=${OLLAMA_URL}

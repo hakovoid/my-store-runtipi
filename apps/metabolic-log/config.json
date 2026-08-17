@@ -6,7 +6,7 @@
   "exposable": true,
   "dynamic_config": true,
   "id": "metabolic-log",
-  "tipi_version": 1,
+  "tipi_version": 2,
   "version": "0.19.0",
   "categories": ["utilities"],
   "description": "Journal alimentaire et sportif à saisie libre, analysé par un LLM, calibré sur un bilan sanguin personnel. Les cibles et les commentaires dérivent des marqueurs biologiques réels plutôt que d'un objectif de poids générique.",
@@ -14,6 +14,14 @@
   "author": "hakovoid",
   "source": "https://github.com/hakovoid/metabolic-log",
   "form_fields": [
+    {
+      "type": "password",
+      "label": "Mot de passe d'accès",
+      "hint": "Demandé à l'ouverture de l'application. Sans lui, toute personne pouvant joindre le port a accès à vos bilans sanguins et à votre journal.",
+      "required": true,
+      "env_variable": "APP_PASSWORD",
+      "min": 8
+    },
     {
       "type": "random",
       "label": "Clé de chiffrement de la base",
