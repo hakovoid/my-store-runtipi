@@ -16,18 +16,19 @@ Les cibles et les commentaires dérivent des marqueurs biologiques réels — pa
 - **🏃 Suivi d'activité** hebdomadaire sur un programme en 4 phases
 - **🩸 Bilans sanguins** : saisie par photo, comparaison au précédent, repères alimentaires dérivés
 - **📄 Rapport pour le médecin**, exports CSV/JSON, tous produits localement
-- **🔒 Chiffrement au repos** (SQLCipher)
+- **🔒 Chiffrement au repos** (SQLCipher) et **accès par mot de passe**
 
 ## 📋 Configuration requise
 
 - **Port** : 3000 (interne)
 - **Variables d'environnement** :
+  - `APP_PASSWORD` : mot de passe d'accès (obligatoire)
   - `DB_KEY` : clé de chiffrement de la base (générée automatiquement, obligatoire)
   - Au moins un fournisseur d'analyse : `ANTHROPIC_API_KEY`, `OPENAI_API_KEY`, ou `OLLAMA_URL`
 
 ## 🔧 Après l'installation
 
-1. Accédez à Metabolic Log via l'interface Runtipi
+1. Accédez à Metabolic Log via l'interface Runtipi, connectez-vous avec le mot de passe choisi
 2. Renseignez votre profil dans « Profil et cibles »
 3. Saisissez votre premier bilan sanguin
 4. Cliquez « Adapter au dernier bilan » pour calibrer les repères alimentaires

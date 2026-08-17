@@ -13,16 +13,18 @@ Les applications de suivi nutritionnel comptent des calories contre une cible g�
 - **Bilans sanguins** : saisie par photo (jusqu'à 8 pages), comparaison au bilan précédent, dérivation des repères alimentaires
 - **Rapport pour le médecin**, exports CSV et sauvegarde JSON, tous produits localement
 - **Chiffrement au repos** (SQLCipher) de la base de données
+- **Accès protégé par mot de passe**, demandé à l'ouverture
 
 ## Configuration requise
 
 - **Port** : 3000 (interne), exposé sur le port de votre choix
+- **Mot de passe d'accès** : demandé à l'ouverture de l'application
 - **Clé de chiffrement de la base** : générée automatiquement à l'installation, à sauvegarder précieusement — sans elle, la base est définitivement illisible
 - **Au moins un fournisseur d'analyse** : clé API Anthropic, clé API OpenAI, ou une instance Ollama accessible sur le réseau
 
 ## Après l'installation
 
-1. Accédez à Metabolic Log via l'interface Runtipi
+1. Accédez à Metabolic Log via l'interface Runtipi et connectez-vous
 2. Renseignez votre profil (âge, taille, poids, cibles) dans « Profil et cibles »
 3. Saisissez votre premier bilan sanguin dans « Bilans sanguins »
 4. Cliquez « Adapter au dernier bilan » pour calibrer les repères alimentaires
