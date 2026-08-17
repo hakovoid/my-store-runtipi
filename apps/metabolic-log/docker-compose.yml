@@ -1,10 +1,6 @@
-version: "3"
 services:
   metabolic-log:
-    container_name: metabolic-log
     image: ghcr.io/hakovoid/metabolic-log:0.19.0
-    ports:
-      - ${APP_PORT}:3000
     volumes:
       - ${APP_DATA_DIR}/data:/data
     environment:
@@ -13,31 +9,9 @@ services:
       - OPENAI_API_KEY=${OPENAI_API_KEY}
       - OLLAMA_URL=${OLLAMA_URL}
     restart: unless-stopped
-    networks:
-      - tipi_main_network
-    labels:
-      # Main
-      traefik.enable: true
-      traefik.http.middlewares.metabolic-log-web-redirect.redirectscheme.scheme: https
-      traefik.http.services.metabolic-log.loadbalancer.server.port: 3000
-      # Web
-      traefik.http.routers.metabolic-log-insecure.rule: Host(`${APP_DOMAIN}`)
-      traefik.http.routers.metabolic-log-insecure.entrypoints: web
-      traefik.http.routers.metabolic-log-insecure.service: metabolic-log
-      traefik.http.routers.metabolic-log-insecure.middlewares: metabolic-log-web-redirect
-      # Websecure
-      traefik.http.routers.metabolic-log.rule: Host(`${APP_DOMAIN}`)
-      traefik.http.routers.metabolic-log.entrypoints: websecure
-      traefik.http.routers.metabolic-log.service: metabolic-log
-      traefik.http.routers.metabolic-log.tls.certresolver: myresolver
-      # Local domain
-      traefik.http.routers.metabolic-log-local-insecure.rule: Host(`metabolic-log.${LOCAL_DOMAIN}`)
-      traefik.http.routers.metabolic-log-local-insecure.entrypoints: web
-      traefik.http.routers.metabolic-log-local-insecure.service: metabolic-log
-      traefik.http.routers.metabolic-log-local-insecure.middlewares: metabolic-log-web-redirect
-      # Local domain secure
-      traefik.http.routers.metabolic-log-local.rule: Host(`metabolic-log.${LOCAL_DOMAIN}`)
-      traefik.http.routers.metabolic-log-local.entrypoints: websecure
-      traefik.http.routers.metabolic-log-local.service: metabolic-log
-      traefik.http.routers.metabolic-log-local.tls: true
-      runtipi.managed: true
+    x-runtipi:
+      is_main: true
+      internal_port: 3000
+
+x-runtipi:
+  schema_version: 2

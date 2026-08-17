@@ -6,7 +6,7 @@
   "exposable": true,
   "dynamic_config": true,
   "id": "metabolic-log",
-  "tipi_version": 6,
+  "tipi_version": 1,
   "version": "0.19.0",
   "categories": ["utilities"],
   "description": "Journal alimentaire et sportif à saisie libre, analysé par un LLM, calibré sur un bilan sanguin personnel. Les cibles et les commentaires dérivent des marqueurs biologiques réels plutôt que d'un objectif de poids générique.",
