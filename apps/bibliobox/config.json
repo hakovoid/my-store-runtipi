@@ -1,0 +1,42 @@
+{
+  "$schema": "../app-info-schema.json",
+  "name": "BiblioBox",
+  "port": 8350,
+  "available": true,
+  "exposable": true,
+  "dynamic_config": true,
+  "id": "bibliobox",
+  "tipi_version": 1,
+  "version": "1.35.0",
+  "categories": ["utilities"],
+  "description": "Gestionnaire de collection de mangas, BD, comics et livres. Couvertures et informations de l'édition française cherchées par EAN (BnF, Google Books, Open Library), scan des codes-barres, collections par personne, tomes manquants et nouveautés. Les données restent sur votre serveur.",
+  "short_desc": "Collection de mangas, BD, comics et livres, avec scan des codes-barres",
+  "author": "hakovoid",
+  "source": "https://github.com/hakovoid/BiblioBox",
+  "form_fields": [
+    {
+      "type": "password",
+      "label": "Mot de passe d'accès",
+      "hint": "Demandé à l'ouverture de l'application (8 caractères au moins). Sans lui, toute personne pouvant joindre le port verrait et pourrait modifier votre collection.",
+      "required": true,
+      "env_variable": "BIBLIOBOX_PASSWORD",
+      "min": 8
+    },
+    {
+      "type": "text",
+      "label": "Nom de domaine",
+      "hint": "Facultatif. Si vous ouvrez BiblioBox par un nom de domaine (par exemple bibliobox.mondomaine.fr ou un nom local en .lan), indiquez-le ici ; plusieurs noms possibles, séparés par des virgules. Les adresses IP et les noms en .local sont toujours acceptés.",
+      "required": false,
+      "env_variable": "BIBLIOBOX_HOSTS"
+    },
+    {
+      "type": "text",
+      "label": "Clé Google Books",
+      "hint": "Facultatif. Donne à BiblioBox son propre quota de recherches Google Books (environ 1 000 par jour) au lieu du quota partagé, vite épuisé. Elle peut aussi se saisir plus tard dans Menu → Réglages.",
+      "required": false,
+      "env_variable": "GOOGLE_BOOKS_KEY"
+    }
+  ],
+  "supported_architectures": ["arm64", "amd64"],
+  "min_tipi_version": "4.5.0"
+}

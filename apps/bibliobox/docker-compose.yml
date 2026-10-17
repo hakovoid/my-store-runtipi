@@ -1,0 +1,16 @@
+services:
+  bibliobox:
+    image: ghcr.io/hakovoid/bibliobox:1.35.0
+    volumes:
+      - ${APP_DATA_DIR}/data:/data
+    environment:
+      - BIBLIOBOX_PASSWORD=${BIBLIOBOX_PASSWORD}
+      - BIBLIOBOX_HOSTS=${BIBLIOBOX_HOSTS}
+      - GOOGLE_BOOKS_KEY=${GOOGLE_BOOKS_KEY}
+    restart: unless-stopped
+    x-runtipi:
+      is_main: true
+      internal_port: 8080
+
+x-runtipi:
+  schema_version: 2
