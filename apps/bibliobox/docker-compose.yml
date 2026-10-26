@@ -1,6 +1,6 @@
 services:
   bibliobox:
-    image: ghcr.io/hakovoid/bibliobox:1.44.1
+    image: ghcr.io/hakovoid/bibliobox:1.45.0
     volumes:
       - ${APP_DATA_DIR}/data:/data
     environment:
